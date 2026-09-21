@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* ── Custom CSS variables for the Auction Arena theme ── */
+:root {
+  --color-electric-blue: #00d4ff;
+  --color-purple: #8b5cf6;
+  --color-magenta: #e040fb;
+  --color-gold: #ffd700;
+  --color-dark-navy: #050a1a;
+}
+
+/* ── Scrollbar styling ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0f1e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00d4ff44;
+}
+
+/* ── Focus ring override for accessibility ── */
+*:focus-visible {
+  outline: 2px solid #00d4ff;
+  outline-offset: 2px;
+}
+
+/* ── Glassmorphism card helper ── */
+.glass-card {
+  background: rgba(5, 15, 40, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  box-shadow:
+    0 0 40px rgba(0, 212, 255, 0.05),
+    0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* ── Glow button effect ── */
+.btn-primary {
+  background: linear-gradient(135deg, #0099cc, #6d28d9);
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4), 0 0 40px rgba(109, 40, 217, 0.2);
+}
+
+/* ── Input glow on focus ── */
+.input-glow:focus {
+  border-color: rgba(0, 212, 255, 0.6);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+}
+
+/* ── Text glow ── */
+.text-glow-blue {
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+}
+.text-glow-purple {
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+}
+
+/* ── Particle canvas ── */
+#particles {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+}
