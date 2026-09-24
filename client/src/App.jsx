@@ -4,6 +4,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Home from "./pages/Home";
+import ForgotPassword from "./components/ForgotPassword";
+import ResetPassword from "./components/ResetPassword";
 
 export default function App() {
   return (
@@ -27,6 +29,22 @@ export default function App() {
             element={
               <ProtectedRoute requireAuth={false}>
                 <Signup />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/forgot-password"
+            element={
+              <ProtectedRoute requireAuth={false}>
+                <ForgotPassword />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/reset-password"
+            element={
+              <ProtectedRoute requireAuth={false}>
+                <ResetPassword />
               </ProtectedRoute>
             }
           />

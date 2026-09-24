@@ -24,6 +24,14 @@ const userSchema = new mongoose.Schema(
       required: true,
       select: false, // never sent in queries
     },
+    resetPasswordTokenHash: {
+      type: String,
+      select: false,
+    },
+    resetPasswordExpiresAt: {
+      type: Date,
+      select: false,
+    },
   },
   { timestamps: true }
 );

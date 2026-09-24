@@ -105,12 +105,12 @@ export default function Login() {
               />
               <span className="text-white/50 text-xs">Remember me</span>
             </label>
-            <button
-              type="button"
+            <Link
+              to="/forgot-password"
               className="text-xs text-cyan-400/70 hover:text-cyan-300 transition-colors"
             >
               Forgot password?
-            </button>
+            </Link>
           </motion.div>
 
           {serverError && (

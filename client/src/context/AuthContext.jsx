@@ -4,6 +4,7 @@ import axios from "axios";
 const api = axios.create({
   baseURL: "/api",
   withCredentials: true,
+  timeout: 20000,
   headers: { "Content-Type": "application/json" },
 });
 
@@ -45,6 +46,16 @@ export function AuthProvider({ children }) {
     setUser(null);
   }, []);
 
+  const requestPasswordReset = useCallback(async (email) => {
+    const { data } = await api.post("/auth/forgot-password", { email });
+    return data;
+  }, []);
+
+  const resetPassword = useCallback(async (token, password) => {
+    const { data } = await api.post(`/auth/reset-password/${token}`, { password });
+    return data;
+  }, []);
+
   const value = {
     user,
     loading,
@@ -52,6 +63,8 @@ export function AuthProvider({ children }) {
     login,
     register,
     logout,
+    requestPasswordReset,
+    resetPassword,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
